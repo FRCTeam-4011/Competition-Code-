@@ -1,0 +1,31 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.91,
+      "y": 4.49
+    },
+    "rotation": 117.75837160861235
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "shootFromSub"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "right side shoot and move"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}
