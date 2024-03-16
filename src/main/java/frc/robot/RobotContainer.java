@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -72,6 +73,7 @@ public class RobotContainer {
         private final Command ThreeNoteAuto = new ThreeNoteAuto(s_Swerve, shooterSubsystem, kickerSubsystem,
                         armSubsystem,
                         intakeAndKickerSubsystem);
+
         // private final Command FourNoteAuto = new FourNoteAuto(s_Swerve,
         // shooterSubsystem, kickerSubsystem, armSubsystem, intakeAndKickerSubsystem);
 
@@ -129,6 +131,8 @@ public class RobotContainer {
                 m_Chooser.addOption("2 Note Right Side Auto", new PathPlannerAuto("2 Note Right Side Auto"));
                 m_Chooser.addOption("2 Note Up the middle", new PathPlannerAuto("Two Note Up The Middle Auto"));
                 m_Chooser.addOption("shoot only", new PathPlannerAuto("shoot only"));
+                m_Chooser.addOption("right side shoot and move", new PathPlannerAuto("right side shoot and move"));
+                m_Chooser.addOption("left side shoot and move", new PathPlannerAuto("left side shoot and move"));
                 autoChooser = AutoBuilder.buildAutoChooser();
 
                 // SmartDashboard.putData("Auto's", m_Chooser);

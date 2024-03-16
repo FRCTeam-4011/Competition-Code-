@@ -3,25 +3,41 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 4.97,
-        "y": 0.84
+        "x": 1.38,
+        "y": 7.27
       },
       "prevControl": null,
       "nextControl": {
-        "x": 5.9434192466495155,
-        "y": 0.6109694992969524
+        "x": 2.38,
+        "y": 7.27
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.08,
-        "y": 0.77
+        "x": 2.8909454969907094,
+        "y": 6.969716047694203
       },
       "prevControl": {
-        "x": 7.08,
-        "y": 0.7699999999999996
+        "x": 2.3904953986831052,
+        "y": 6.916151336903813
+      },
+      "nextControl": {
+        "x": 3.391395595298313,
+        "y": 7.023280758484594
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.381800393230416,
+        "y": 7.4842588431615615
+      },
+      "prevControl": {
+        "x": 4.381800393230416,
+        "y": 7.4842588431615615
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,19 +48,12 @@
   "constraintZones": [],
   "eventMarkers": [
     {
-      "name": "Intake And Kicker CMD",
-      "waypointRelativePos": 0.3,
+      "name": "Intake and kicker start",
+      "waypointRelativePos": 0.4,
       "command": {
         "type": "parallel",
         "data": {
-          "commands": [
-            {
-              "type": "named",
-              "data": {
-                "name": "Intake and Kicker CMD"
-              }
-            }
-          ]
+          "commands": []
         }
       }
     }
@@ -57,13 +66,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 179.9763958272672,
+    "rotation": 180.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "2 note right side",
+  "folder": "move only",
   "previewStartingState": {
-    "rotation": 178.6713147149764,
+    "rotation": 179.83934755545351,
     "velocity": 0
   },
   "useDefaultConstraints": true
