@@ -3,41 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 0.98,
-        "y": 4.53
+        "x": 2.9,
+        "y": 7.03
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.9534192466495162,
-        "y": 4.3009694992969525
+        "x": 1.861859906055994,
+        "y": 7.051575128791284
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.5,
-        "y": 2.68
+        "x": 2.61,
+        "y": 4.0
       },
       "prevControl": {
-        "x": 1.1998666019398228,
-        "y": 3.0947704153541835
-      },
-      "nextControl": {
-        "x": 1.8001333980601775,
-        "y": 2.265229584645817
-      },
-      "isLocked": false,
-      "linkedName": null
-    },
-    {
-      "anchor": {
-        "x": 8.08,
-        "y": 0.77
-      },
-      "prevControl": {
-        "x": 7.1065807533504834,
-        "y": 0.9990305007030477
+        "x": 0.7272411347671701,
+        "y": 4.0584707722122
       },
       "nextControl": null,
       "isLocked": false,
@@ -46,16 +30,16 @@
   ],
   "rotationTargets": [
     {
-      "waypointRelativePos": 1.55,
-      "rotationDegrees": -177.63343250985827,
+      "waypointRelativePos": 0.5,
+      "rotationDegrees": -177.6723292376992,
       "rotateFast": false
     }
   ],
   "constraintZones": [],
   "eventMarkers": [
     {
-      "name": "intake and kicker ",
-      "waypointRelativePos": 1.65,
+      "name": "Intake and Kicker",
+      "waypointRelativePos": 0.75,
       "command": {
         "type": "parallel",
         "data": {
@@ -63,7 +47,7 @@
             {
               "type": "named",
               "data": {
-                "name": "Intake and Kicker CMD"
+                "name": "IntakeAndKickerCMD"
               }
             }
           ]
@@ -79,13 +63,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 178.8982938847937,
+    "rotation": 180.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "two note right side",
+  "folder": "4 Note Middle",
   "previewStartingState": {
-    "rotation": 119.80545939441677,
+    "rotation": -138.48548951191012,
     "velocity": 0
   },
   "useDefaultConstraints": true

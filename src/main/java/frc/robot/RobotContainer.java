@@ -96,11 +96,12 @@ public class RobotContainer {
 
                 NamedCommands.registerCommand("shootFromSub",
                                 new shootFromSubSCG(shooterSubsystem, armSubsystem, kickerSubsystem));
-                NamedCommands.registerCommand("Intake and Kicker CMD",
-                                new IntakeAndKickerCMD(intakeAndKickerSubsystem, strafeAxis, rotationAxis,
-                                                kickerSubsystem));
-                NamedCommands.registerCommand("shoot from podium CMD",
+                NamedCommands.registerCommand("IntakeAndKickerCMD",
+                                new IntakeAndKickerCMD(intakeAndKickerSubsystem, VoltageConstants.vk_IntakeForward,
+                                                VoltageConstants.vk_KickerForward, kickerSubsystem));
+                NamedCommands.registerCommand("shootFromPodiumSCG",
                                 new shootFromPodiumSCG(armSubsystem, shooterSubsystem, kickerSubsystem));
+
                 s_Swerve.setDefaultCommand(
                                 new TeleopSwerve(
                                                 s_Swerve,
@@ -133,6 +134,7 @@ public class RobotContainer {
                 m_Chooser.addOption("shoot only", new PathPlannerAuto("shoot only"));
                 m_Chooser.addOption("right side shoot and move", new PathPlannerAuto("right side shoot and move"));
                 m_Chooser.addOption("left side shoot and move", new PathPlannerAuto("left side shoot and move"));
+                m_Chooser.addOption("4 Note middle Auto", new PathPlannerAuto("4 Note Middle Auto"));
                 autoChooser = AutoBuilder.buildAutoChooser();
 
                 // SmartDashboard.putData("Auto's", m_Chooser);

@@ -26,7 +26,7 @@ public class ArmSubsystem extends SubsystemBase {
     armMotor.setInverted(false);
     armMotor.setSmartCurrentLimit(80);
     armMotor.setSoftLimit(SoftLimitDirection.kForward, -0.10f);
-    armMotor.setSoftLimit(SoftLimitDirection.kReverse, -19.34f);
+    armMotor.setSoftLimit(SoftLimitDirection.kReverse, -18.60f);
     armMotor.enableSoftLimit(SoftLimitDirection.kForward, true);
     armMotor.enableSoftLimit(SoftLimitDirection.kReverse, true);
     armMotor.burnFlash();
