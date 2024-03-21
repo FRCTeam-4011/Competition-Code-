@@ -35,7 +35,7 @@ public class RunKickerTimeBaseCMD extends Command {
   @Override
   public void execute() {
     currentTime = Timer.getFPGATimestamp();
-    if (currentTime - startTime > 1) {
+    if (currentTime - startTime > .5) {
 
       kickerSubsystem.setKickerSpeed(kickerVolts);
     }

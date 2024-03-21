@@ -101,6 +101,12 @@ public class RobotContainer {
                                                 VoltageConstants.vk_KickerForward, kickerSubsystem));
                 NamedCommands.registerCommand("shootFromPodiumSCG",
                                 new shootFromPodiumSCG(armSubsystem, shooterSubsystem, kickerSubsystem));
+                NamedCommands.registerCommand("shootFromSubAuto",
+                                new shootFromSubAuto(shooterSubsystem, armSubsystem, kickerSubsystem));
+                NamedCommands.registerCommand("shootFromPodiumAuto",
+                                new shootFromPodiumAuto(armSubsystem, shooterSubsystem, kickerSubsystem));
+                NamedCommands.registerCommand("MoveArmToPodShotCMD",
+                                new MoveArmToPodShotCMD(armSubsystem, VoltageConstants.vk_ArmDown));
 
                 s_Swerve.setDefaultCommand(
                                 new TeleopSwerve(

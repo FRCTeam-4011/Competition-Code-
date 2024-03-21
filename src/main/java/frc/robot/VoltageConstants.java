@@ -11,7 +11,7 @@ public class VoltageConstants {
     public static final double vk_IntakeReverse = -6.0;
 
     // Kicker
-    public static final double vk_KickerForward = 6.0;
+    public static final double vk_KickerForward = 8.0;
     public static final double vk_KickerReverse = -3.0;
 
     // Shooter
@@ -19,8 +19,8 @@ public class VoltageConstants {
     public static final double vk_BottomShooterForward = 8.0;
 
     // Arm
-    public static final double vk_ArmUp = -3.0;
-    public static final double vk_ArmDown = 3.0;
+    public static final double vk_ArmUp = -5.0;
+    public static final double vk_ArmDown = 5.0;
 
     // Shooter From Sub
     public static final double vk_TopShooterSub = 6.0;
@@ -32,7 +32,7 @@ public class VoltageConstants {
 
     // Shooter for Amp
     public static final double vk_TopShooterAmp = 1.0;
-    public static final double vk_BottomShooterAmp = 2.8;
+    public static final double vk_BottomShooterAmp = 3.5;
 
     // Shooter for Back Podium
     public static final double vk_TopShooterMax = 10.5;

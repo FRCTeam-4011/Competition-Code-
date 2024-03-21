@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.9,
-        "y": 7.03
+        "x": 3.0,
+        "y": 7.05
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.861859906055994,
-        "y": 7.051575128791284
+        "x": 1.961859906055994,
+        "y": 7.071575128791284
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.61,
-        "y": 4.0
+        "x": 2.809086415893629,
+        "y": 4.128036518181299
       },
       "prevControl": {
-        "x": 0.7272411347671701,
-        "y": 4.0584707722122
+        "x": 0.9263275506607993,
+        "y": 4.186507290393498
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,7 +39,7 @@
   "eventMarkers": [
     {
       "name": "Intake and Kicker",
-      "waypointRelativePos": 0.75,
+      "waypointRelativePos": 0.85,
       "command": {
         "type": "parallel",
         "data": {
@@ -56,8 +56,8 @@
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 2.0,
-    "maxAcceleration": 1.3,
+    "maxVelocity": 3.0,
+    "maxAcceleration": 1.5,
     "maxAngularVelocity": 286.48,
     "maxAngularAcceleration": 186.48
   },
@@ -69,7 +69,7 @@
   "reversed": false,
   "folder": "4 Note Middle",
   "previewStartingState": {
-    "rotation": -138.48548951191012,
+    "rotation": -153.44685295827205,
     "velocity": 0
   },
   "useDefaultConstraints": true

@@ -20,19 +20,19 @@
         {
           "type": "path",
           "data": {
-            "pathName": "two note middle part 1"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "two note middle part 2"
+            "pathName": "4 Note middle stage 1"
           }
         },
         {
           "type": "named",
           "data": {
-            "name": "shootFromSub"
+            "name": "IntakeAndKickerCMD"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shootFromPodiumSCG"
           }
         },
         {
@@ -42,9 +42,9 @@
           }
         },
         {
-          "type": "path",
+          "type": "named",
           "data": {
-            "pathName": "4 Note middle stage 2 part 2"
+            "name": "IntakeAndKickerCMD"
           }
         },
         {
@@ -60,6 +60,12 @@
           }
         },
         {
+          "type": "named",
+          "data": {
+            "name": "IntakeAndKickerCMD"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "4 Note Middle stage 3 part 2"
@@ -68,7 +74,7 @@
         {
           "type": "named",
           "data": {
-            "name": "shootFromSub"
+            "name": "shootFromPodiumSCG"
           }
         }
       ]

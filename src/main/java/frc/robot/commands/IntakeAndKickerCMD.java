@@ -1,8 +1,11 @@
+
+//TESTING ALTERNATIVE CODE, TOP CODE WAS WRITTEN FIRST
+
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-package frc.robot.commands;
+/*package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -11,7 +14,7 @@ import frc.robot.subsystems.IntakeAndKickerSubsystem;
 import frc.robot.subsystems.KickerSubsystem;
 
 public class IntakeAndKickerCMD extends Command {
-  /** Creates a new IntakeAndKickerCMD. */
+  // Creates a new IntakeAndKickerCMD. 
   private final IntakeAndKickerSubsystem intakeAndKickerSubsystem;
   private final KickerSubsystem kickerSubsystem;
   private double kickerVolts;
@@ -69,5 +72,63 @@ public class IntakeAndKickerCMD extends Command {
       return true;
     }
     else{return false;}
+  }
+}*/
+
+package frc.robot.commands;
+
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.VoltageConstants;
+import frc.robot.subsystems.IntakeAndKickerSubsystem;
+import frc.robot.subsystems.KickerSubsystem;
+
+public class IntakeAndKickerCMD extends Command {
+  private final IntakeAndKickerSubsystem intakeAndKickerSubsystem;
+  private final KickerSubsystem kickerSubsystem;
+  private double kickerVolts;
+  private double intakeVolts;
+  private double timeStart;
+
+  public IntakeAndKickerCMD(IntakeAndKickerSubsystem intakeAndKickerSubsystem, double kickerVolts, double intakeVolts,
+      KickerSubsystem kickerSubsystem) {
+    this.intakeAndKickerSubsystem = intakeAndKickerSubsystem;
+    this.kickerSubsystem = kickerSubsystem;
+    this.intakeVolts = intakeVolts;
+    this.kickerVolts = kickerVolts;
+
+    addRequirements(intakeAndKickerSubsystem);
+    addRequirements(kickerSubsystem);
+  }
+
+  @Override
+  public void initialize() {
+    System.out.println("Intake and Kicker SYS started");
+    timeStart = Timer.getFPGATimestamp();
+  }
+
+  @Override
+  public void execute() {
+    intakeAndKickerSubsystem.setIntakeSYSSpeed(intakeVolts, kickerVolts);
+  }
+
+  @Override
+  public void end(boolean interrupted) {
+    double currentTime = Timer.getFPGATimestamp();
+    if (currentTime - timeStart < 2) {
+      if (intakeAndKickerSubsystem.getIntakeSensor()) {
+        intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
+        kickerSubsystem.setKickerSpeed(VoltageConstants.vk_KickerReverse);
+        Timer.delay(0.5); // Reverse kicker motor for 0.5 seconds
+      }
+    }
+    intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
+    kickerSubsystem.setKickerSpeed(0);
+    System.out.println("Intake and Kicker SYS stop");
+  }
+
+  @Override
+  public boolean isFinished() {
+    return intakeAndKickerSubsystem.getIntakeSensor();
   }
 }

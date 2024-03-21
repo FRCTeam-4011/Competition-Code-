@@ -14,9 +14,9 @@ import frc.robot.subsystems.ShooterSubsystem;
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
-public class shootFromPodiumSCG extends SequentialCommandGroup {
+public class shootFromPodiumAuto extends SequentialCommandGroup {
   // Creates a new shootFromPodiumSCG.
-  public shootFromPodiumSCG(ArmSubsystem armSubsystem, ShooterSubsystem shooterSubsystem,
+  public shootFromPodiumAuto(ArmSubsystem armSubsystem, ShooterSubsystem shooterSubsystem,
       KickerSubsystem kickerSubsystem) {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
@@ -31,9 +31,8 @@ public class shootFromPodiumSCG extends SequentialCommandGroup {
         new MoveArmToPodShotCMD(armSubsystem, VoltageConstants.vk_ArmUp).withTimeout(1.5), //
         new RunShooterTimeBaseCMD(shooterSubsystem, VoltageConstants.vk_TopShooterForward,
             VoltageConstants.vk_BottomShooterForward)
-            .alongWith(new RunKickerTimeBaseCMD(kickerSubsystem, VoltageConstants.vk_KickerForward)).withTimeout(1), //
+            .alongWith(new RunKickerTimeBaseCMD(kickerSubsystem, VoltageConstants.vk_KickerForward)).withTimeout(1) //
 
-        new MoveArmToHomePOSCMD(armSubsystem, VoltageConstants.vk_ArmDown)//
     );
 
   }
