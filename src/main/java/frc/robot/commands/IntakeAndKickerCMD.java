@@ -14,14 +14,16 @@ import frc.robot.subsystems.IntakeAndKickerSubsystem;
 import frc.robot.subsystems.KickerSubsystem;
 
 public class IntakeAndKickerCMD extends Command {
-  // Creates a new IntakeAndKickerCMD. 
+  // Creates a new IntakeAndKickerCMD.
   private final IntakeAndKickerSubsystem intakeAndKickerSubsystem;
   private final KickerSubsystem kickerSubsystem;
   private double kickerVolts;
   private double intakeVolts;
   private double timeStart;
   private double currentTime;
-  public IntakeAndKickerCMD(IntakeAndKickerSubsystem intakeAndKickerSubsystem, double kickerVolts, double intakeVolts, KickerSubsystem kickerSubsystem) {
+
+  public IntakeAndKickerCMD(IntakeAndKickerSubsystem intakeAndKickerSubsystem, double kickerVolts, double intakeVolts,
+      KickerSubsystem kickerSubsystem) {
     this.intakeAndKickerSubsystem = intakeAndKickerSubsystem;
     this.kickerSubsystem = kickerSubsystem;
     this.intakeVolts = intakeVolts;
@@ -42,11 +44,9 @@ public class IntakeAndKickerCMD extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
-      
-      intakeAndKickerSubsystem.setIntakeSYSSpeed( intakeVolts,  kickerVolts);
 
-    
+    intakeAndKickerSubsystem.setIntakeSYSSpeed(intakeVolts, kickerVolts);
+
   }
 
   // Called once the command ends or is interrupted.
@@ -58,20 +58,23 @@ public class IntakeAndKickerCMD extends Command {
       Timer.delay(.75);
       intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
       kickerSubsystem.setKickerSpeed(0);
-      
+
+    } else {
+      intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
+      kickerSubsystem.setKickerSpeed(0);
     }
-    else{intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0); kickerSubsystem.setKickerSpeed(0);}
-    
+
     System.out.println("Intake and Kicker SYS stop");
   }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (intakeAndKickerSubsystem.getIntakeSensor()){
+    if (intakeAndKickerSubsystem.getIntakeSensor()) {
       return true;
+    } else {
+      return false;
     }
-    else{return false;}
   }
 }*/
 
@@ -90,7 +93,8 @@ public class IntakeAndKickerCMD extends Command {
   private double intakeVolts;
   private double timeStart;
 
-  public IntakeAndKickerCMD(IntakeAndKickerSubsystem intakeAndKickerSubsystem, double kickerVolts, double intakeVolts,
+  public IntakeAndKickerCMD(IntakeAndKickerSubsystem intakeAndKickerSubsystem,
+      double kickerVolts, double intakeVolts,
       KickerSubsystem kickerSubsystem) {
     this.intakeAndKickerSubsystem = intakeAndKickerSubsystem;
     this.kickerSubsystem = kickerSubsystem;
@@ -115,7 +119,7 @@ public class IntakeAndKickerCMD extends Command {
   @Override
   public void end(boolean interrupted) {
     double currentTime = Timer.getFPGATimestamp();
-    if (currentTime - timeStart < 2) {
+    if (currentTime - timeStart > .25) {
       if (intakeAndKickerSubsystem.getIntakeSensor()) {
         intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
         kickerSubsystem.setKickerSpeed(VoltageConstants.vk_KickerReverse);
