@@ -6,7 +6,7 @@ package frc.robot;
 
 /** Add your docs here. */
 public class EncoderConstants {
-    public static final double ek_IntakeArmPOS = 0.0;
+
     public static final double ek_PodiumShotArmPOS = -9.50;
     public static final double ek_BackPodiumShotArmPOS = -6.033;
     public static final double ek_PodiumShotArmPOSAuto = -9.50;
