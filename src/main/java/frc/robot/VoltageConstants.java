@@ -7,8 +7,8 @@ package frc.robot;
 /** Add your docs here. */
 public class VoltageConstants {
     // Intake
-    public static final double vk_IntakeForward = 6.0;
-    public static final double vk_IntakeReverse = -6.0;
+    public static final double vk_IntakeForward = 10.5;
+    public static final double vk_IntakeReverse = -10.5;
 
     // Kicker
     public static final double vk_KickerForward = 8.0;
