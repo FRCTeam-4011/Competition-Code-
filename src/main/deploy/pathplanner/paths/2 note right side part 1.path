@@ -1,0 +1,92 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 0.98,
+        "y": 4.53
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.9534192466495162,
+        "y": 4.3009694992969525
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.5,
+        "y": 2.68
+      },
+      "prevControl": {
+        "x": 1.1998666019398228,
+        "y": 3.0947704153541835
+      },
+      "nextControl": {
+        "x": 1.8001333980601775,
+        "y": 2.265229584645817
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.08,
+        "y": 0.77
+      },
+      "prevControl": {
+        "x": 7.1065807533504834,
+        "y": 0.9990305007030477
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1.55,
+      "rotationDegrees": -177.63343250985827,
+      "rotateFast": false
+    }
+  ],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "intake and kicker ",
+      "waypointRelativePos": 1.65,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Intake and Kicker CMD"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 1.5,
+    "maxAngularVelocity": 286.48,
+    "maxAngularAcceleration": 186.48
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 178.8982938847937,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "two note right side",
+  "previewStartingState": {
+    "rotation": 119.80545939441677,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}
