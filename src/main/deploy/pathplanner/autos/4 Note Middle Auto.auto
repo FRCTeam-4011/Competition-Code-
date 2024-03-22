@@ -26,12 +26,6 @@
         {
           "type": "named",
           "data": {
-            "name": "IntakeAndKickerCMD"
-          }
-        },
-        {
-          "type": "named",
-          "data": {
             "name": "shootFromPodiumSCG"
           }
         },

@@ -58,7 +58,7 @@ public class RobotContainer {
         private final ArmSubsystem armSubsystem = new ArmSubsystem();
         private final IntakeAndKickerSubsystem intakeAndKickerSubsystem = new IntakeAndKickerSubsystem();
         private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
-        private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
+        // private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
 
         private final Swerve s_Swerve = new Swerve();
         private final SendableChooser<Command> autoChooser;
@@ -169,11 +169,11 @@ public class RobotContainer {
                 // VoltageConstants.vk_IntakeReverse));
                 new JoystickButton(driver, 5)
                                 .whileTrue(new IntakeCMD(intakeSubsystem, VoltageConstants.vk_IntakeReverse));
-                new JoystickButton(driver, 2).whileTrue(new ClimberCMD(climberSubsystem,
-                                VoltageConstants.vk_RightClimberUp, VoltageConstants.vk_LeftClimberUp));
+                // new JoystickButton(driver, 2).whileTrue(new ClimberCMD(climberSubsystem,
+                // VoltageConstants.vk_RightClimberUp, VoltageConstants.vk_LeftClimberUp));
 
-                new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
-                                VoltageConstants.vk_RightClimberDown, VoltageConstants.vk_LeftClimberDown));
+                // new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
+                // VoltageConstants.vk_RightClimberDown, VoltageConstants.vk_LeftClimberDown));
                 // new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
                 // VoltageConstants.vk_LeftClimberUp, VoltageConstants.vk_RightClimberUp));
 

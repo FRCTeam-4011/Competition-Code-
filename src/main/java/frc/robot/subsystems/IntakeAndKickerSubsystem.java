@@ -16,32 +16,27 @@ public class IntakeAndKickerSubsystem extends SubsystemBase {
 
   /** Creates a new IntakeAndKickerSubsystem. */
   private static TalonFX intakeMotor;
-    final VoltageOut intakeVoltageOutRequest = new VoltageOut(0);
+  final VoltageOut intakeVoltageOutRequest = new VoltageOut(0);
 
   private static TalonFX kickerMotor;
-    final VoltageOut kickerVoltageOutRequest = new VoltageOut(0);
+  final VoltageOut kickerVoltageOutRequest = new VoltageOut(0);
   private DigitalInput intakeBeamBrake;
-
 
   public IntakeAndKickerSubsystem() {
 
     kickerMotor = new TalonFX(24, "rio");
     kickerMotor.getConfigurator();
-    //kickerMotor.setNeutralMode(NeutralModeValue.Brake);
+    // kickerMotor.setNeutralMode(NeutralModeValue.Brake);
     kickerMotor.setInverted(false);
 
-    
+    intakeMotor = new TalonFX(17, "rio");
+    intakeMotor.getConfigurator();
+    intakeMotor.setInverted(false);
+    // intakeMotor.setNeutralMode(NeutralModeValue.Brake);
 
-   intakeMotor = new TalonFX(17, "rio");
-   intakeMotor.getConfigurator();
-   intakeMotor.setInverted(false);
-   //intakeMotor.setNeutralMode(NeutralModeValue.Brake);
+    intakeMotor.setControl(new Follower(kickerMotor.getDeviceID(), false));
 
-   intakeMotor.setControl(new Follower(kickerMotor.getDeviceID(), false));
-
-   
-
-   intakeBeamBrake = new DigitalInput(1);
+    intakeBeamBrake = new DigitalInput(1);
 
   }
 
@@ -50,11 +45,11 @@ public class IntakeAndKickerSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void  setIntakeSYSSpeed(double intakeVolts, double kickerVolts) {
+  public void setIntakeSYSSpeed(double intakeVolts, double kickerVolts) {
     intakeMotor.setVoltage(intakeVolts);
     kickerMotor.setVoltage(kickerVolts);
   }
-  
+
   public boolean getIntakeSensor() {
     return !intakeBeamBrake.get();
   }
@@ -62,6 +57,5 @@ public class IntakeAndKickerSubsystem extends SubsystemBase {
   public boolean getIntakenotBroke() {
     return intakeBeamBrake.get();
   }
-
 
 }
