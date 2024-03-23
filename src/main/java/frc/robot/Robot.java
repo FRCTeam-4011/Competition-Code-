@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,6 +29,8 @@ public class Robot extends TimedRobot {
   private RobotContainer m_robotContainer;
 
   private double startTime;
+  public Field2d field2d = new Field2d();
+  
 
   /**
    * This function is run when the robot is first started up and should be used
@@ -110,6 +113,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+    LimelightHelpers.getBotPose2d_wpiBlue("frontLimelight");
+    
   }
 
   @Override

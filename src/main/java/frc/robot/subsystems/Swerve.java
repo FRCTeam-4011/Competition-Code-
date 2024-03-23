@@ -2,11 +2,13 @@ package frc.robot.subsystems;
 
 import frc.robot.SwerveModule;
 import frc.robot.Constants;
-
+import frc.robot.LimelightHelpers;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
+
+import java.util.Vector;
 
 import com.ctre.phoenix6.configs.Pigeon2Configuration;
 import com.ctre.phoenix6.hardware.Pigeon2;
@@ -27,11 +29,16 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Swerve extends SubsystemBase {
     public SwerveDriveOdometry swerveOdometry;
+    public SwerveDrivePoseEstimator poseEstmator;
     public SwerveModule[] mSwerveMods;
     public Pigeon2 gyro;
     private ChassisSpeeds targetChassisSpeeds = new ChassisSpeeds();
 
     private Field2d field = new Field2d();
+
+    private static final Vector<N3> stateStdDevs = vecBuilder.fill(0.05, 0.05, Units.degreesToRadians(3));
+    private static final Vector<N3> localMesurementsStdDevs = vecBuilder.fill(0.07, 0.07, Units.degreesToRadians(10));
+
 
     public Swerve() {
         gyro = new Pigeon2(Constants.Swerve.pigeonID, "canivore");
@@ -46,6 +53,15 @@ public class Swerve extends SubsystemBase {
                 new SwerveModule(2, Constants.Swerve.Mod2.constants),
                 new SwerveModule(3, Constants.Swerve.Mod3.constants)
         };
+
+        
+        poseEstmator = new SwerveDrivePoseEstimator(
+                Constants.Swerve.swerveKinematics,
+                this.getGyroYaw(),
+                this.getModulePositions(),
+                new Pose2d(),
+                stateStdDevs,
+                localMesurementsStdDevs);
 
         swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getGyroYaw(), getModulePositions());
         field.setRobotPose(getPose());
@@ -245,6 +261,10 @@ public class Swerve extends SubsystemBase {
         this.targetChassisSpeeds = targetChassisSpeeds;
     }
 
+
+    
+
+
     @Override
     public void periodic() {
         swerveOdometry.update(getGyroYaw(), getModulePositions());
@@ -257,5 +277,13 @@ public class Swerve extends SubsystemBase {
             SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Velocity", mod.getState().speedMetersPerSecond);
             // SmartDashboard.putData(field);
         }
+    
+        LimelightHelpers.PoseEstimate limelighPoseEstimate = LimelightHelpers.getBotPoseEstimate_wpiBlue("frontLimelight");
+    swerveOdometry.addvisionMeasurement(limelighPoseEstimate.pose,
+                                        limelighPoseEstimate.timestampSeconds);
+    
+    field.setRobotPose(swerveOdometry.getEstimatedPosition());
+    
+    
     }
 }

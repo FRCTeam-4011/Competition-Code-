@@ -46,6 +46,8 @@ import frc.robot.subsystems.*;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+        
+
         /* Controllers */
         private final Joystick driver = new Joystick(0);
         private final Joystick operatorJoystick = new Joystick(1);
@@ -58,7 +60,7 @@ public class RobotContainer {
         private final ArmSubsystem armSubsystem = new ArmSubsystem();
         private final IntakeAndKickerSubsystem intakeAndKickerSubsystem = new IntakeAndKickerSubsystem();
         private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
-        // private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
+        
 
         private final Swerve s_Swerve = new Swerve();
         private final SendableChooser<Command> autoChooser;
@@ -152,6 +154,8 @@ public class RobotContainer {
 
                 // autoChooser = AutoBuilder.buildAutoChooser(); Teteza's Pathplanner lines
                 // SmartDashboard.putData("Auto Mode", autoChooser);
+
+                
         }
 
         /**
@@ -171,8 +175,7 @@ public class RobotContainer {
                 // VoltageConstants.vk_IntakeReverse));
                 new JoystickButton(driver, 5)
                                 .whileTrue(new IntakeCMD(intakeSubsystem, VoltageConstants.vk_IntakeReverse));
-                // new JoystickButton(driver, 2).whileTrue(new ClimberCMD(climberSubsystem,
-                // VoltageConstants.vk_RightClimberUp, VoltageConstants.vk_LeftClimberUp));
+               
 
                 // new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
                 // VoltageConstants.vk_RightClimberDown, VoltageConstants.vk_LeftClimberDown));

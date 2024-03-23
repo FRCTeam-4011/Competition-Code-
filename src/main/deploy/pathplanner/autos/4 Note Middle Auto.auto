@@ -60,12 +60,6 @@
           }
         },
         {
-          "type": "path",
-          "data": {
-            "pathName": "4 Note Middle stage 3 part 2"
-          }
-        },
-        {
           "type": "named",
           "data": {
             "name": "shootFromPodiumSCG"

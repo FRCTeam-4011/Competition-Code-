@@ -46,7 +46,7 @@ public class MoveArmToAmpCMD extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    if (armSubsystem.getArmEncoderPOS() < EncoderConstants.ek_AmpShotArmPOS){
+    if (armSubsystem.getArmEncoderPOS() <= EncoderConstants.ek_AmpShotArmPOS){
     return true; 
     }
     else{return false;}
