@@ -170,10 +170,10 @@ public class RobotContainer {
                 new JoystickButton(driver, 5)
                                 .whileTrue(new IntakeCMD(intakeSubsystem, VoltageConstants.vk_IntakeReverse));
                 new JoystickButton(driver, 2).whileTrue(new ClimberCMD(climberSubsystem,
-                                VoltageConstants.vk_RightClimberUp, VoltageConstants.vk_LeftClimberUp));
+                                VoltageConstants.vk_RightClimberUp));
 
                 new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
-                                VoltageConstants.vk_RightClimberDown, VoltageConstants.vk_LeftClimberDown));
+                                VoltageConstants.vk_RightClimberDown));
                 // new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,
                 // VoltageConstants.vk_LeftClimberUp, VoltageConstants.vk_RightClimberUp));
 

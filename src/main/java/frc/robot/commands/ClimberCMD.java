@@ -12,16 +12,16 @@ public class ClimberCMD extends Command {
     // Creates a new ClimberCMD.
     private final ClimberSubsystem climberSubsystem;
     private double rightClimberVolts;
-    private double leftClimberVolts;
+   
 
     // private double rightClimberEncoder;
     // private double leftClimberEncoder;
-    public ClimberCMD(ClimberSubsystem climberSubsystem, double rightClimberVolts, double leftClimberVolts) {
+    public ClimberCMD(ClimberSubsystem climberSubsystem, double rightClimberVolts) {
         // Use addRequirements() here to declare subsystem dependencies.
         this.climberSubsystem = climberSubsystem;
         // this.leftClimberEncoder = leftClimberEncoder;
         // this.rightClimberEncoder = rightClimberEncoder;
-        this.leftClimberVolts = leftClimberVolts;
+    
         this.rightClimberVolts = rightClimberVolts;
 
         addRequirements(climberSubsystem);
@@ -40,14 +40,14 @@ public class ClimberCMD extends Command {
 
     @Override
     public void execute() {
-        climberSubsystem.setClimberVolts(rightClimberVolts, leftClimberVolts);
+        climberSubsystem.setClimberVolts(rightClimberVolts);
     }
 
     // Called once the command ends or is interrupted.
 
     @Override
     public void end(boolean interrupted) {
-        climberSubsystem.setClimberVolts(0, 0);
+        climberSubsystem.setClimberVolts(0);
         System.out.println("Climb stopped");
     }
 

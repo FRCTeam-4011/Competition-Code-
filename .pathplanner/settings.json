@@ -10,9 +10,9 @@
     "two note up the middle"
   ],
   "autoFolders": [],
-  "defaultMaxVel": 3.0,
-  "defaultMaxAccel": 1.5,
-  "defaultMaxAngVel": 286.48,
-  "defaultMaxAngAccel": 186.48,
-  "maxModuleSpeed": 2.0
+  "defaultMaxVel": 4.0,
+  "defaultMaxAccel": 3.5,
+  "defaultMaxAngVel": 300.0,
+  "defaultMaxAngAccel": 250.0,
+  "maxModuleSpeed": 4.0
 }

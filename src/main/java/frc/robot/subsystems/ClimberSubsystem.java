@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class ClimberSubsystem extends SubsystemBase {
     // Creates a new ClimberSubsystem.
     private static CANSparkMax rightClimber;
-    private static CANSparkMax leftClimber;
+    
 
     // private static RelativeEncoder rightClimberEncoder;
     // private static RelativeEncoder leftClimberEncoder;
@@ -31,14 +31,7 @@ public class ClimberSubsystem extends SubsystemBase {
         rightClimber.enableSoftLimit(SoftLimitDirection.kForward, false);
         rightClimber.enableSoftLimit(SoftLimitDirection.kReverse, false);
 
-        leftClimber = new CANSparkMax(16, MotorType.kBrushless);
-        leftClimber.setInverted(false);
-        leftClimber.setSmartCurrentLimit(80);
-        leftClimber.setIdleMode(IdleMode.kBrake);
-        leftClimber.setSoftLimit(SoftLimitDirection.kForward, 0);
-        leftClimber.setSoftLimit(SoftLimitDirection.kReverse, 0);
-        leftClimber.enableSoftLimit(SoftLimitDirection.kForward, false);
-        leftClimber.enableSoftLimit(SoftLimitDirection.kReverse, false);
+      
 
         // rightClimberEncoder = rightClimber.getEncoder();
         // rightClimberEncoder.setPosition(0.0);
@@ -57,9 +50,9 @@ public class ClimberSubsystem extends SubsystemBase {
         // rightClimberEncoder.getPosition());
     }
 
-    public void setClimberVolts(double rightClimberVolts, double leftClimberVolts) {
+    public void setClimberVolts(double rightClimberVolts) {
         rightClimber.setVoltage(rightClimberVolts);
-        leftClimber.setVoltage(leftClimberVolts);
+        
     }
 
 }
