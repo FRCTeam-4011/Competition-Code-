@@ -28,9 +28,8 @@ public class shootFromPodiumAuto extends SequentialCommandGroup {
          * new MoveArmToPodShotCMD(armSubsystem, VoltageConstants.vk_ArmUp)
          * ),//
          */
-        new MoveArmToPodShotCMD(armSubsystem, VoltageConstants.vk_ArmUp).withTimeout(1.5), //
-        new RunShooterTimeBaseCMD(shooterSubsystem, VoltageConstants.vk_TopShooterForward,
-            VoltageConstants.vk_BottomShooterForward)
+        new AutoCustomArmPOS(armSubsystem, VoltageConstants.vk_ArmUp), //
+        new RunShooterTimeBaseCMD(shooterSubsystem, VoltageConstants.vk_TopShooterCusAuto, VoltageConstants.vk_BottomShooterCusAuto)
             .alongWith(new RunKickerTimeBaseCMD(kickerSubsystem, VoltageConstants.vk_KickerForward)).withTimeout(1) //
 
     );

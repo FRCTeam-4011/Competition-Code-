@@ -3,25 +3,41 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 3.0,
-        "y": 7.05
+        "x": 2.86,
+        "y": 6.99
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.961859906055994,
-        "y": 7.071575128791284
+        "x": 1.9788014504803932,
+        "y": 6.899551121039565
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 2.809086415893629,
-        "y": 4.128036518181299
+        "x": 2.271155311541392,
+        "y": 5.6482765956984915
       },
       "prevControl": {
-        "x": 0.9263275506607993,
-        "y": 4.186507290393498
+        "x": 2.271155311541392,
+        "y": 6.291455090032688
+      },
+      "nextControl": {
+        "x": 2.271155311541392,
+        "y": 4.993435833721312
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.86,
+        "y": 4.092954054853979
+      },
+      "prevControl": {
+        "x": 1.7916949794013546,
+        "y": 4.572414386994017
       },
       "nextControl": null,
       "isLocked": false,
@@ -30,8 +46,8 @@
   ],
   "rotationTargets": [
     {
-      "waypointRelativePos": 0.5,
-      "rotationDegrees": -177.6723292376992,
+      "waypointRelativePos": 1.0,
+      "rotationDegrees": 122.34744349944198,
       "rotateFast": false
     }
   ],
@@ -39,7 +55,7 @@
   "eventMarkers": [
     {
       "name": "Intake and Kicker",
-      "waypointRelativePos": 0.85,
+      "waypointRelativePos": 1.7,
       "command": {
         "type": "parallel",
         "data": {
@@ -63,13 +79,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 180.0,
+    "rotation": -178.53119928561424,
     "rotateFast": false
   },
   "reversed": false,
   "folder": "4 Note Middle",
   "previewStartingState": {
-    "rotation": -153.44685295827205,
+    "rotation": -145.3448109291114,
     "velocity": 0
   },
   "useDefaultConstraints": true

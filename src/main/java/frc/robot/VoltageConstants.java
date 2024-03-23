@@ -18,6 +18,10 @@ public class VoltageConstants {
     public static final double vk_TopShooterForward = 8.0;
     public static final double vk_BottomShooterForward = 8.0;
 
+    //Shooter Custom Auto Posistion
+    public static final double vk_TopShooterCusAuto = 8.0;
+    public static final double vk_BottomShooterCusAuto = 8.0;
+
     // Arm
     public static final double vk_ArmUp = -5.0;
     public static final double vk_ArmDown = 5.0;

@@ -119,7 +119,7 @@ public class IntakeAndKickerCMD extends Command {
   @Override
   public void end(boolean interrupted) {
     double currentTime = Timer.getFPGATimestamp();
-    if (currentTime - timeStart < 4) {
+    if (currentTime - timeStart < 10) {
       if (intakeAndKickerSubsystem.getIntakeSensor()) {
         intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
         kickerSubsystem.setKickerSpeed(VoltageConstants.vk_KickerReverse);
@@ -129,10 +129,10 @@ public class IntakeAndKickerCMD extends Command {
     intakeAndKickerSubsystem.setIntakeSYSSpeed(0, 0);
     kickerSubsystem.setKickerSpeed(0);
     System.out.println("Intake and Kicker SYS stop");
-  }
+  } 
 
   @Override
   public boolean isFinished() {
-    return intakeAndKickerSubsystem.getIntakeSensor();
+  return intakeAndKickerSubsystem.getIntakeSensor();
   }
 }

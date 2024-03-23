@@ -9,6 +9,7 @@ public class EncoderConstants {
 
     public static final double ek_PodiumShotArmPOS = -9.50;
     public static final double ek_BackPodiumShotArmPOS = -6.033;
+    public static final double ek_AutoMidLineShot = -10.18;
     public static final double ek_PodiumShotArmPOSAuto = -9.50;
     public static final double ek_AmpShotArmPOS = -18.60;
     public static final double ek_SubShotArmPOS = -18.60;// change to -19.04

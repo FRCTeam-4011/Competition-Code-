@@ -22,7 +22,7 @@ public class shootAmpSCG extends SequentialCommandGroup {
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
      new MoveArmToAmpCMD(armSubsystem, VoltageConstants.vk_ArmUp).withTimeout(1.5),//
-     new RunShooterTimeBaseCMD(shooterSubsystem, VoltageConstants.vk_TopShooterAmp, VoltageConstants.vk_BottomShooterAmp).alongWith(new RunKickerTimeBaseCMD(kickerSubsystem, VoltageConstants.vk_KickerForward)).withTimeout(3),//
+     new RunShooterTimeBaseCMD(shooterSubsystem, VoltageConstants.vk_TopShooterAmp, VoltageConstants.vk_BottomShooterAmp).alongWith(new RunKickerTimeBaseCMD(kickerSubsystem, VoltageConstants.vk_KickerForward)).withTimeout(1),//
       new MoveArmToHomePOSCMD(armSubsystem, VoltageConstants.vk_ArmDown)//
       
     );
