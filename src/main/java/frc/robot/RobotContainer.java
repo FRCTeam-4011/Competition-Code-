@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.print.attribute.standard.JobHoldUntil;
 
+import org.photonvision.PhotonCamera;
+
 import com.pathplanner.lib.auto.AutoBuilder;
 import com.pathplanner.lib.auto.NamedCommands;
 import com.pathplanner.lib.commands.PathPlannerAuto;
@@ -46,7 +48,7 @@ import frc.robot.subsystems.*;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-        
+        public static PhotonCamera frontCamera = new PhotonCamera("FrontCamera");
 
         /* Controllers */
         private final Joystick driver = new Joystick(0);
@@ -64,6 +66,7 @@ public class RobotContainer {
 
         private final Swerve s_Swerve = new Swerve();
         private final SendableChooser<Command> autoChooser;
+        private final poseEstimator poseESTIMATOR = new poseEstimator(frontCamera, s_Swerve);
 
         // Auto names
         private final Command ShootOnlyAuto = new ShootOnlyAuto(shooterSubsystem, kickerSubsystem, armSubsystem);
