@@ -1,0 +1,70 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.359011265031077,
+        "y": 5.578111669043852
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.388096855965791,
+        "y": 5.531335051274091
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 3.382099983573186,
+        "y": 5.578111669043852
+      },
+      "prevControl": {
+        "x": 2.382099983573186,
+        "y": 5.578111669043852
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "intake and kicker",
+      "waypointRelativePos": 0.35,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "IntakeAndKickerCMD"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 2.5,
+    "maxAngularVelocity": 286.48,
+    "maxAngularAcceleration": 186.48
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -178.45184230102208,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": null,
+  "previewStartingState": {
+    "rotation": 180.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

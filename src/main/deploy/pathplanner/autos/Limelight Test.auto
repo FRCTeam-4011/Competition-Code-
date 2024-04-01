@@ -1,0 +1,43 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.36,
+      "y": 5.58
+    },
+    "rotation": 179.261864746223
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "shootFromSub"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Pathplanner test"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "IntakeAndKickerCMD"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "shootFromPodiumSCG"
+          }
+        }
+      ]
+    }
+  },
+  "folder": null,
+  "choreoAuto": false
+}

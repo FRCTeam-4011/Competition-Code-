@@ -62,16 +62,10 @@ public class TwoNoteAuto extends SequentialCommandGroup {
                                 s_Swerve);
 
                 addCommands(
-                                new shootFromSubSCG(shooterSubsystem, armSubsystem, kickerSubsystem), //
+                                new shootFromSubSCG(shooterSubsystem, armSubsystem, kickerSubsystem) //
 
-                                new InstantCommand(() -> s_Swerve.setPose(exampleTrajectory.getInitialPose())),
-                                swerveControllerCommand.alongWith(new IntakeAndKickerCMD(intakeAndKickerSubsystem,
-                                                VoltageConstants.vk_IntakeForward, VoltageConstants.vk_KickerForward,
-                                                kickerSubsystem)), //
-                                new RunKickerCMD(kickerSubsystem, VoltageConstants.vk_KickerReverse).withTimeout(.35), //
-
-                                new shootFromPodiumSCG(armSubsystem, shooterSubsystem, kickerSubsystem), //
-                                new MoveArmToHomePOSCMD(armSubsystem, VoltageConstants.vk_ArmDown)//
+                               
+                                
 
                 );
         }

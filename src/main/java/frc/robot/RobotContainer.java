@@ -62,11 +62,12 @@ public class RobotContainer {
         private final ArmSubsystem armSubsystem = new ArmSubsystem();
         private final IntakeAndKickerSubsystem intakeAndKickerSubsystem = new IntakeAndKickerSubsystem();
         private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+        private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
         
 
         private final Swerve s_Swerve = new Swerve();
         private final SendableChooser<Command> autoChooser;
-        private final poseEstimator poseESTIMATOR = new poseEstimator(frontCamera, s_Swerve);
+        
 
         // Auto names
         private final Command ShootOnlyAuto = new ShootOnlyAuto(shooterSubsystem, kickerSubsystem, armSubsystem);
@@ -148,6 +149,7 @@ public class RobotContainer {
                 m_Chooser.addOption("right side shoot and move", new PathPlannerAuto("right side shoot and move"));
                 m_Chooser.addOption("left side shoot and move", new PathPlannerAuto("left side shoot and move"));
                 m_Chooser.addOption("4 Note middle Auto", new PathPlannerAuto("4 Note Middle Auto"));
+                m_Chooser.addOption("Two Note Limelight test", new PathPlannerAuto("Limelight Test"));
                 autoChooser = AutoBuilder.buildAutoChooser();
 
                 // SmartDashboard.putData("Auto's", m_Chooser);
@@ -178,6 +180,8 @@ public class RobotContainer {
                 // VoltageConstants.vk_IntakeReverse));
                 new JoystickButton(driver, 5)
                                 .whileTrue(new IntakeCMD(intakeSubsystem, VoltageConstants.vk_IntakeReverse));
+                new JoystickButton(driver, 1).whileTrue(new ClimberCommand(climberSubsystem, VoltageConstants.vk_RightClimberUp, VoltageConstants.vk_LeftClimberUp));
+                new JoystickButton(driver, 2).whileTrue(new ClimberCommand(climberSubsystem, VoltageConstants.vk_RightClimberDown, VoltageConstants.vk_LeftClimberDown));
                
 
                 // new JoystickButton(driver, 1).whileTrue(new ClimberCMD(climberSubsystem,

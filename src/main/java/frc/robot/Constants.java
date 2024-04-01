@@ -1,5 +1,6 @@
 package frc.robot;
 
+import com.ctre.phoenix6.configs.CANcoderConfiguration;
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
@@ -9,6 +10,7 @@ import edu.wpi.first.apriltag.AprilTagFieldLayout;
 import edu.wpi.first.apriltag.AprilTagFields;
 import edu.wpi.first.math.Matrix;
 import edu.wpi.first.math.VecBuilder;
+import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Rotation3d;
 import edu.wpi.first.math.geometry.Transform3d;
@@ -21,9 +23,14 @@ import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
 import frc.lib.util.COTSTalonFXSwerveConstants;
 import frc.lib.util.SwerveModuleConstants;
+import frc.robot.subsystems.Swerve;
 
 public final class Constants {
+       
         public static final double k_StickDeadband = 0.1;
+
+        
+    
         /*
          * public static final double k_IntakeVoltage = 6.0;
          * public static final double k_TopShooterVoltage = 8.0;
@@ -39,7 +46,9 @@ public final class Constants {
 
 
         public static final class Swerve {
+
                 public static final int pigeonID = 13;
+                
                 public static final COTSTalonFXSwerveConstants chosenModule = // TODO: This must be tuned to specific
                                                                               // robot
                                 COTSTalonFXSwerveConstants.SDS.MK4i
@@ -53,6 +62,18 @@ public final class Constants {
                                                                                       // specific
                                                                                       // robot
                 public static final double wheelCircumference = chosenModule.wheelCircumference;
+
+              /* private final SwerveDrivePoseEstimator m_PoseEstimator = 
+                        new SwerveDrivePoseEstimator(swerveKinematics,
+                         gyroPigeon2.getRotation2d(),
+                          , null);
+
+                          */
+
+
+
+              
+
 
                 /*
                  * Swerve Kinematics
@@ -166,7 +187,28 @@ public final class Constants {
                                         canCoderID, angleOffset);
                 }
 
+
+
+
+
+
+
+
+   
+
         }
+
+  
+
+        public static class VisionConstants {
+
+                /**
+                 * Physical location of the camera on the robot, relative to the center of the robot.
+                 */
+                public static final Transform3d CAMERA_TO_ROBOT =
+                    new Transform3d(new Translation3d(13.5, -12.5, -0.20), new Rotation3d());
+                public static final Transform3d ROBOT_TO_CAMERA = CAMERA_TO_ROBOT.inverse();
+              }
 
         public static final class AutoConstants { // TODO: The below constants are used in the example auto, and must be
                                                   // tuned to specific robot

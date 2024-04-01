@@ -42,6 +42,14 @@ public class VoltageConstants {
     public static final double vk_TopShooterMax = 10.5;
     public static final double vk_BottomShooterMax = 10.5;
 
+    //Climber up
+    public static final double vk_RightClimberUp = 10.0;
+    public static final double vk_LeftClimberUp = 10.0;
+
+    //Climber down
+    public static final double vk_RightClimberDown = -10.0;
+    public static final double vk_LeftClimberDown = -10.0;
+
    
    
 
